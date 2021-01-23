@@ -154,16 +154,23 @@ button[disabled] {
   margin-top: 10px;
   display: block;
   text-align: center;
-  width: 20px;
+  width: 100%;
 }
 
-/* range bar */
+/*range bar  */
 #charange {
   display: inline-block;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
   margin-top: 30px;
+}
+
+#rangtrack {
+  display: inline-block;
+  width: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* buttons for different form */
