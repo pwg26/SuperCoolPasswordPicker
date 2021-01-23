@@ -135,15 +135,17 @@ button[disabled] {
   position: relative;
 }
 
-#first-prompt {
+/* pop-up-forms */
+
+#form1 {
   display: none;
 }
 
-#second-prompt {
+#form2 {
   display: none;
 }
 
-#third-prompt {
+#form3 {
   display: none;
 }
 
@@ -160,6 +162,24 @@ button[disabled] {
   max-width: 800px;
   margin: 0 auto;
   margin-top: 30px;
+}
+
+/* buttons for different form */
+#form1-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#form2-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#form3-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 690px) {
