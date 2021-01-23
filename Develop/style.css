@@ -149,13 +149,15 @@ button[disabled] {
   display: none;
 }
 
+/* label for rangebar */
 #label {
   margin-top: 10px;
   display: block;
   text-align: center;
-  width: 100%;
+  width: 20px;
 }
 
+/* range bar */
 #charange {
   display: inline-block;
   width: 100%;
