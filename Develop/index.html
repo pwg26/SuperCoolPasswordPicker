@@ -7,6 +7,7 @@
     <title>Password Generator</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <div class="wrapper">
       <header>
@@ -29,6 +30,93 @@
         </div>
       </div>
     </div>
+
+    <!-- Pop up for choosing criteria with check boxes-->
+    <div class="pop-up">
+      <div id="first-prompt">
+        <div class="card">
+          <div class="card-header">
+            <h2>Select Password Criterias</h2>
+          </div>
+          <div class="card-body">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="chooslen"
+              />
+              <label class="form-check-label" for="chooslen"> Length </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="choosechar"
+              />
+              <label class="form-check-label" for="choosechar">
+                Characters
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- pop up for choosing character length with slide bar -->
+      <div id="second-prompt">
+        <div class="card">
+          <div class="card-header">
+            <h2>Choose Character Length</h2>
+          </div>
+          <label id="label">Number of Characters</label>
+          <input
+            id="charange"
+            type="range"
+            min="8"
+            max="128"
+            step="1"
+            value="10"
+            onchange="updateTextInput(this.value);"
+          />
+          <input type="text" id="charlengthtext" value="" />
+        </div>
+      </div>
+
+      <!-- pop up for choosing different character types with check boxes -->
+      <div id="third-prompt">
+        <div class="card">
+          <div class="card-header">
+            <h2>Select Different Character Types</h2>
+          </div>
+          <div class="card-body">
+            <div class="check-box">
+              <input type="checkbox" value="" id="UL" />
+              <label class="form-check-label" for="UL">
+                Uppercase Letters
+              </label>
+            </div>
+            <div class="check-box">
+              <input type="checkbox" value="" id="LL" />
+              <label class="form-check-label" for="LL">
+                Lowercase Letters
+              </label>
+            </div>
+            <div class="check-box">
+              <input type="checkbox" value="" id="num" />
+              <label class="form-check-label" for="num"> Numbers </label>
+            </div>
+            <div class="check-box">
+              <input type="checkbox" value="" id="special" />
+              <label class="form-check-label" for="special">
+                Spectial Characters
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

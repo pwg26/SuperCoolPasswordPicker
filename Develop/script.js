@@ -11,29 +11,38 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// generateBtn.addEventListener("click", function(){document.querySelector(".wrapper").style.display="none"});
 
 
-//range value for slider
-function updateTextInput(val) {
-  document.getElementById('charlengthtext').value=val; 
-}
 
 
 
 
 
-//generate password code
-function generatePassword(){
-  var passwordLengthMax= 128
-  var passwordLengthMin= 8
-  var lowerCase="abcdefghijklmnopqrstuvwxyz"
-  var uppperCase = lowerCase.toUpperCase()
-  var specialCharacters = "" !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ ""
+//range value for slider
+generateBtn.addEventListener("click", function(){
+  document.querySelector(".wrapper").style.display="none";
+  document.querySelector(".pop-up").style.display="flex";
+  document.querySelector("#third-prompt").style.display="flex";
+})
+
+
+
+// //activate pop up criteria windows
+
+
+
+// //generate password code
+// function generatePassword(){
+//   var passwordLengthMax= 128
+//   var passwordLengthMin= 8
+//   var lowerCase="abcdefghijklmnopqrstuvwxyz"
+//   var uppperCase = lowerCase.toUpperCase()
+//   var specialCharacters = "" !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ ""
 
   
 
 
 
 
-}
+
