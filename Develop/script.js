@@ -13,6 +13,18 @@ var form1boxchar = document.querySelector("#choosechar");
 // form2
 var form2Btn = document.querySelector("#form2-btn");
 
+const characterAmountRange = document.getElementById('characterAmountRange')
+const characterAmountNumber = document.getElementById('characterAmountNumber')
+
+characterAmountNumber.addEventListener('input', syncCharacterAmount)
+characterAmountRange.addEventListener('input', syncCharacterAmount)
+
+function syncCharacterAmount(e) {
+  const value = e.target.value
+  characterAmountNumber.value = value
+  characterAmountRange.value = value
+}
+
 
 
 // form3
@@ -40,9 +52,9 @@ generateBtn.addEventListener("click", function(){
   document.querySelector("#form1").style.display="flex";
 
   // opens form2 or form3 depending what is selected on form 1
-        // if (form1boxlen.checked == false){
-        //   form1Btn.style.display="bock";
-        // } 
+  //       if (form1boxlen.checked == false){
+  //         form1Btn.style.display="bock";
+  //       } 
   
   form1Btn.addEventListener("click", function(){
     document.querySelector("#form1").style.display="none";

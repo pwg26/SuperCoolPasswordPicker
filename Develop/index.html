@@ -64,21 +64,26 @@
           <div class="card-header">
             <h2>Choose Character Length</h2>
           </div>
-          <label id="label">Number of Characters (must be between 8 and 128)</label>
-          <input
-            id="charange"
-            type="range"
-            min="8"
-            max="128"
-            step="1"
-            value="10"
-          />
-          <input type="text" id="charlengthtext" value="" />
+
+          <form>
+            <label for="rangeamount" id="label"
+              >Number of Characters (must be between 8 and 128)</label
+            >
+            <input id="rangebar" type="range" min="8" max="128" value="10" />
+
+            <input
+              id="rangeamount"
+              type="number"
+              min="8"
+              max="128"
+              value="10"
+            />
+          </form>
+
           <div class="card-footer">
             <button id="form2-btn" class="btn">Continue</button>
           </div>
         </div>
-        
       </div>
 
       <!-- pop up form3 for choosing different character types with check boxes -->
@@ -89,37 +94,29 @@
           </div>
           <div class="card-body">
             <div class="check-box">
-              <input type="checkbox" value="" id="UL" />
-              <label class="form-check-label" for="UL">
-                Uppercase Letters
-              </label>
+              <input type="checkbox" id="UL" />
+              <label for="UL"> Uppercase Letters </label>
             </div>
             <div class="check-box">
-              <input type="checkbox" value="" id="LL" />
-              <label class="form-check-label" for="LL">
-                Lowercase Letters
-              </label>
+              <input type="checkbox" id="LL" />
+              <label for="LL"> Lowercase Letters </label>
             </div>
             <div class="check-box">
               <input type="checkbox" value="" id="num" />
-              <label class="form-check-label" for="num"> Numbers </label>
+              <label for="num"> Numbers </label>
             </div>
             <div class="check-box">
-              <input type="checkbox" value="" id="special" />
-              <label class="form-check-label" for="special">
-                Spectial Characters
-              </label>
+              <input type="checkbox" id="special" />
+              <label for="special"> Spectial Characters </label>
             </div>
           </div>
           <div class="card-footer">
-            <button id="form3-btn" class="btn">Continue</button>
+            <button id="form3-btn" class="btn">Generate!</button>
           </div>
         </div>
       </div>
     </div>
 
     <script src="script-v2.js"></script>
-  
-    </script>
   </body>
 </html>

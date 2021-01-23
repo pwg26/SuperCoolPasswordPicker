@@ -4,21 +4,84 @@
 // starter page w/ button 
 var generateBtn = document.querySelector("#generate");
 
-// form1
-  // form1-button
-let form1Btn = document.querySelector("#form1-btn");
+// // form1
+//   // form1-button
+// let form1Btn = document.querySelector("#form1-btn");
 
-  // form1-checkboxes
-let form1boxlen = document.querySelector("#chooselen");
-var form1boxchar = document.querySelector("#choosechar");
+//   // form1-checkboxes
+// let form1boxlen = document.querySelector("#chooselen");
+// let form1boxchar = document.querySelector("#choosechar");
 
 // form2
-var form2Btn = document.querySelector("#form2-btn");
+    // form2-buttons 
+const form2Btn = document.querySelector("#form2-btn");
 
+    // fotm2-range bar and value with function to link both
+const rangeBar = document.querySelector('#rangebar')
+const rangeAmount = document.querySelector('#rangeamount')
+    
+rangeBar.addEventListener('input', syncBartoAmount)
+rangeAmount.addEventListener('input', syncBartoAmount)
 
+function syncBartoAmount(x) {
+    const value = x.target.value
+    rangeBar.value = value
+    rangeAmount.value = value
+    }
 
 // form3
+    // form-3 buttons
 var form3Btn = document.querySelector("#form3-btn");
+    
+    // form-3 check boxes
+const upperCase = document.querySelector('#UL')
+const lowerCase = document.querySelector('#LL')
+const numbers = document.querySelector('#num')
+const special = document.querySelector('#special')
+
+
+
+// function to quickly loop and build arrays from char codes for given character types
+
+function makeArray(H, L){
+    var array= []
+    for (var i = L; 0 =< H; i){
+        array.push(i)
+    }
+}
+const upperCaseChar = String.fromCharCode(makeArray(65, 90))
+const lowerCaseChar = String.fromCharCode(makeArray(97, 122))
+const numberChar = String.fromCharCode(makeArray(48, 57))
+const specialChar = String.fromCharCode(makeArray(32, 47).concate(makeArray(58, 64)).concate(makeArray(91, 96)).concate(makeArray(123, 126)))
+
+
+// form-2 & form-3 imputs depending if they are slected
+
+const Characteramount = rangeAmount.value
+
+const upperCaseChecked = upperCase.checked
+const lowerCaseChecked = lowerCase.checked
+const numbersChecked = numbers.checked
+const specialChecked = special.checked
+
+
+
+
+
+
+
+
+
+
+// generate password function
+function generatePassword(upperCaseChecked, lowerCaseChecked, numbersChecked, specialChecked){
+
+}
+
+
+
+
+
 
 
 // Write password to the #password input
@@ -29,10 +92,6 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
-// Add event listener to generate button
-
-
 
 
 generateBtn.addEventListener("click", function(){
@@ -57,6 +116,8 @@ generateBtn.addEventListener("click", function(){
       document.querySelector("#form3").style.display="none";
       document.querySelector(".wrapper").style.display="block"; 
     })
+
+
 
 })
 
