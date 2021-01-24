@@ -2,133 +2,128 @@
 
 // Assignment Code
 // starter page w/ button 
-var generateBtn = document.querySelector("#generate");
-
-// // form1
-//   // form1-button
-// let form1Btn = document.querySelector("#form1-btn");
-
-//   // form1-checkboxes
-// let form1boxlen = document.querySelector("#chooselen");
-// let form1boxchar = document.querySelector("#choosechar");
+const generateBtn = document.querySelector("#generate");
 
 // form2
-    // form2-buttons 
+// form2-buttons 
 const form2Btn = document.querySelector("#form2-btn");
 
-    // fotm2-range bar and value with function to link both
+// fotm2-range bar and value with function to link both
 const rangeBar = document.querySelector('#rangebar')
 const rangeAmount = document.querySelector('#rangeamount')
-    
+
 rangeBar.addEventListener('input', syncBartoAmount)
 rangeAmount.addEventListener('input', syncBartoAmount)
 
-function syncBartoAmount(x) {
-    const value = x.target.value
-    rangeBar.value = value
-    rangeAmount.value = value
-    }
 
 // form3
-    // form-3 buttons
-var form3Btn = document.querySelector("#form3-btn");
-    
-    // form-3 check boxes
+// form-3 buttons
+const form3Btn = document.querySelector("#form3-btn");
+
+// form-3 check boxes
 const upperCase = document.querySelector('#UL')
 const lowerCase = document.querySelector('#LL')
 const numbers = document.querySelector('#num')
 const special = document.querySelector('#special')
 
 
+// encompasses all criteria for all forms
+const criteria = document.querySelector('#criteria')
 
-// function to quickly loop and build arrays from char codes for given character types
-
-function makeArray(H, L){
-    var array= []
-    for (var i = L; 0 =< H; i){
-        array.push(i)
-    }
-}
-const upperCaseChar = String.fromCharCode(makeArray(65, 90))
-const lowerCaseChar = String.fromCharCode(makeArray(97, 122))
-const numberChar = String.fromCharCode(makeArray(48, 57))
-const specialChar = String.fromCharCode(makeArray(32, 47).concate(makeArray(58, 64)).concate(makeArray(91, 96)).concate(makeArray(123, 126)))
+// vairiable for password
+const passwordText = document.querySelector("#password");
 
 
-// form-2 & form-3 imputs depending if they are slected
+// arrays of special symbols
 
-const Characteramount = rangeAmount.value
-
-const upperCaseChecked = upperCase.checked
-const lowerCaseChecked = lowerCase.checked
-const numbersChecked = numbers.checked
-const specialChecked = special.checked
+const UPPERCASE_CHAR_CODES = makeCharArray(65, 90)
+const LOWERCASE_CHAR_CODES = makeCharArray(97, 122)
+const NUMBER_CHAR_CODES = makeCharArray(48, 57)
+const SYMBOL_CHAR_CODES = makeCharArray(33, 47).concat(
+  makeCharArray(58, 64)
+).concat(
+  makeCharArray(91, 96)
+).concat(
+  makeCharArray(123, 126)
+)
 
 
 
+//  values of length and character depededing on what the user chooses
+criteria.addEventListener('submit', e => {
+  e.preventDefault()
 
-
-
-
+  const characterAmount = rangeAmount.value
+  const upperCaseChecked = upperCase.checked
+  const lowerCaseChecked = lowerCase.checked
+  const numbersChecked = numbers.checked
+  const specialChecked = special.checked
+  
+  // // document.querySelector("#form3").style.display = "none";
+  // // document.querySelector(".wrapper").style.display = "block";
+  
+  const finalpassword = generatePassword(characterAmount, upperCaseChecked, lowerCaseChecked, numbersChecked, specialChecked)
+  passwordText.placeholder = finalpassword
+})
 
 
 
 // generate password function
-function generatePassword(upperCaseChecked, lowerCaseChecked, numbersChecked, specialChecked){
-
-}
-
-
-
-
-
-
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-
-generateBtn.addEventListener("click", function(){
-  // opens form2 pop-up, hides starter page
-  document.querySelector(".wrapper").style.display="none";
-  document.querySelector(".pop-up").style.display="flex";
-  document.querySelector("#form2").style.display="flex";
-
-  // opens form3 depending what is selected on form2
-        // if (form1boxlen.checked == false){
-        //   form1Btn.style.display="bock";
-        // } 
+function generatePassword(characterAmount, upperCaseChecked, lowerCaseChecked, numbersChecked, specialChecked) {
+  let availableChars = []
   
-  form2Btn.addEventListener("click", function(){
-    document.querySelector("#form2").style.display="none";
-    document.querySelector("#form3").style.display="flex";
-  })
+  if (upperCaseChecked) availableChars = availableChars.concat(UPPERCASE_CHAR_CODES)
+  if (lowerCaseChecked) availableChars = availableChars.concat(LOWERCASE_CHAR_CODES)
+  if (numbersChecked) availableChars = availableChars.concat(NUMBER_CHAR_CODES)
+  if (specialChecked) availableChars = availableChars.concat(SYMBOL_CHAR_CODES )
 
-  // opens original starter page with password depending what is selected on form 3
+  const passwordChars = []
+  for (let i = 0; i < rangeAmount; i++) {
+    const singlePasswordChar = availableChars[Math.floor(Math.random() * availableChars.length)]
+    passwordChars.push(String.fromCharCode(singlePasswordChar))
+  }
+  return passwordChars.join('')
+}
 
-    form3Btn.addEventListener("click", function(){
-      document.querySelector("#form3").style.display="none";
-      document.querySelector(".wrapper").style.display="block"; 
-    })
+// functions to generate different symbols based of char codes
+function makeCharArray(low, high) {
+  const array = []
+  for (let i = low; i <= high; i++) {
+    array.push(i)
+  }
+  return array
+}
 
+// syncs rangebar to value
+function syncBartoAmount(x) {
+  const value = x.target.value
+  rangeBar.value = value
+  rangeAmount.value = value
+}
 
-
+// pop-up windows
+generateBtn.addEventListener("click", function () {
+  document.querySelector(".wrapper").style.display = "none";
+  document.querySelector(".pop-up").style.display = "flex";
+  document.querySelector("#form2").style.display = "flex";
 })
 
+form2Btn.addEventListener("click", function () {
+  document.querySelector("#form2").style.display = "none";
+  document.querySelector("#form3").style.display = "flex";
+ })
 
-// //activate pop up criteria windows
+form3Btn.addEventListener("click", function(){
+  document.querySelector("#form3").style.display="none";
+  document.querySelector(".wrapper").style.display="block"; 
+  })
 
 
-// //generate password code
-// function generatePassword(){
-//   var passwordLengthMax= 128
-//   var passwordLengthMin= 8
-//   var lowerCase="abcdefghijklmnopqrstuvwxyz"
-//   var uppperCase = lowerCase.toUpperCase()
-//   var specialCharacters = "" !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ ""
+
+
+
+
+
+
+
+
