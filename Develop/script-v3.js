@@ -131,7 +131,7 @@ continueBtn.addEventListener("click", function () {
   rangebarPage.style.display = "none";
 });
 
-// function that submits everything to creat password
+// function that submits everything to creat password, prevents button from initiating call back if a checkbox isnt slected
 submitBtn.addEventListener("click", function () {
   var characterAmount = rangeAmount.value;
   var lowerCaseSelected = lowerCaseSelect.checked;
