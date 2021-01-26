@@ -13,7 +13,7 @@ To begin I took to pen and paper to sketch out how I wanted my webpages password
 
 <img src= "assets/images/pop-up.png">
 
-The next part is where it got challangeing. after usig using queries to give variables for all my elements in javascript. I tried useing functions to gather the stored response vairable from the forms in order to randomize the password based off the selected criteria. I think I got close because I was able to change the text asscociated with the card the starting card body.
+The next part is where it got challangeing. after usig using queries to give variables for all my elements in javascript. I tried useing functions to gather the stored response vairable from the forms in order to randomize the password based off the selected criteria. I think I got ,close because I was able to change the text asscociated with the card the starting card body.
 
 <img src= "assets/images/function.png">
 

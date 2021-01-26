@@ -9,38 +9,38 @@
   </head>
 
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
-        </div>
-        <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
-        </div>
-        <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
+    <form id="criteria">
+      <div class="wrapper">
+        <header>
+          <h1>Password Generator</h1>
+        </header>
+        <div class="card">
+          <div class="card-header">
+            <h2>Generate a Password</h2>
+          </div>
+          <div class="card-body">
+            <textarea
+              readonly
+              id="password"
+              placeholder="Your Secure Password"
+              aria-label="Generated Password"
+            ></textarea>
+          </div>
+          <div class="card-footer">
+            <button id="generate" class="btn">Generate Password</button>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Pop up form2  choosing criteria with check boxes-->
-    <div class="pop-up">
-      <form id="criteria">
+      <!-- Pop up form2  choosing criteria with check boxes-->
+
+      <div class="pop-up">
         <div id="form2">
           <div class="card">
             <div class="card-header">
               <h2>Choose Character Length</h2>
             </div>
 
-            <!-- <form> -->
             <label for="rangeamount" id="label"
               >Number of Characters (must be between 8 and 128)</label
             >
@@ -53,8 +53,6 @@
               max="128"
               value="10"
             />
-            <!-- </form> -->
-
             <div class="card-footer">
               <button id="form2-btn" class="btn">Continue</button>
             </div>
@@ -92,8 +90,8 @@
             </div>
           </div>
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
 
     <script src="script-v2.js"></script>
   </body>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style-v2.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Password Generator</h1>
+    </header>
+
+    <div id="start-page" class="wrapper">
+      <div class="card">
+        <div class="card-header">
+          <h2>Generate a Password</h2>
+        </div>
+        <div class="card-body">
+          <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea>
+        </div>
+        <div class="card-footer">
+          <button id="start-btn" class="btn">Generate Password</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- rangebar pop-up -->
+    <div id="rangenar-page" class="wrapper">
+      <div class="card">
+        <div class="card-header">
+          <h2>Choose Character Length</h2>
+        </div>
+
+        <label for="rangeamount" id="label"
+          >Number of Characters (must be between 8 and 128)</label
+        >
+        <input id="rangebar" type="range" min="8" max="128" value="10" />
+        <input id="rangeamount" type="number" min="8" max="128" value="10" />
+        <div class="card-footer">
+          <button id="continue-btn" class="btn">Continue</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="check-box-page" class="wrapper">
+      <div class="card">
+        <div class="card-header">
+          <h2>Select Different Character Types</h2>
+        </div>
+        <div class="card-body">
+          <div class="check-box">
+            <input type="checkbox" id="UL" />
+            <label for="uppercase"> Uppercase Letters </label>
+          </div>
+          <div class="check-box">
+            <input type="checkbox" id="LL" />
+            <label for="lowercase"> Lowercase Letters </label>
+          </div>
+          <div class="check-box">
+            <input type="checkbox" value="" id="num" />
+            <label for="number"> Numbers </label>
+          </div>
+          <div class="check-box">
+            <input type="checkbox" id="special" />
+            <label for="special"> Spectial Characters </label>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button id="submit-btn" class="btn">Generate Password!</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script-v3.js"></script>
+  </body>
+</html>

@@ -63,7 +63,7 @@ criteria.addEventListener('submit', e => {
   // // document.querySelector(".wrapper").style.display = "block";
   
   const finalpassword = generatePassword(characterAmount, upperCaseChecked, lowerCaseChecked, numbersChecked, specialChecked)
-  passwordText.placeholder = finalpassword
+  passwordText.innerHTML = finalpassword
 })
 
 
@@ -71,6 +71,8 @@ criteria.addEventListener('submit', e => {
 // generate password function
 function generatePassword(characterAmount, upperCaseChecked, lowerCaseChecked, numbersChecked, specialChecked) {
   let availableChars = []
+
+  
   
   if (upperCaseChecked) availableChars = availableChars.concat(UPPERCASE_CHAR_CODES)
   if (lowerCaseChecked) availableChars = availableChars.concat(LOWERCASE_CHAR_CODES)
@@ -79,32 +81,42 @@ function generatePassword(characterAmount, upperCaseChecked, lowerCaseChecked, n
 
   const passwordChars = []
   for (let i = 0; i < rangeAmount; i++) {
-    const singlePasswordChar = availableChars[Math.floor(Math.random() * availableChars.length)]
+    const singlePasswordChar = characterAmount[Math.floor(Math.random() * availableChars.length)]
     passwordChars.push(String.fromCharCode(singlePasswordChar))
   }
   return passwordChars.join('')
 }
 
+
 // functions to generate different symbols based of char codes
-function makeCharArray(low, high) {
+function makeCharArra3y(low, high) {
   const array = []
-  for (let i = low; i <= high; i++) {
+  for (let i = low; i =< high; i++) {
     array.push(i)
   }
   return array
 }
 
+
 // syncs rangebar to value
-function syncBartoAmount(x) {
-  const value = x.target.value
+function syncBartoAmount(e) {
+  const value = e.target.value
   rangeBar.value = value
   rangeAmount.value = value
 }
 
+
+
+
+
+
+
+
+
 // pop-up windows
 generateBtn.addEventListener("click", function () {
   document.querySelector(".wrapper").style.display = "none";
-  document.querySelector(".pop-up").style.display = "flex";
+  document.querySelector(".pop-up").style.display = "flex3";
   document.querySelector("#form2").style.display = "flex";
 })
 
